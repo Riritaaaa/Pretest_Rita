@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Robot Walk</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Robot Walk</h2>
+        <p>คำสั่ง Robot Walk</p>
+        <input type="text" id="inputBox"><br>
+        <button id="submitButton" onclick="moveSquare()">คำนวณ</button>
+    </div>
+
+    <div id="coordinates"></div>
+    <div id="container2">
+        <div id="square"></div>
+    </div>
+</body>
+
+
+<script>
+    let x = 0;
+    let y = 0;
+    let xCoordinate = 0;
+    let yCoordinate = 0;
+    const step = 25;
+    const coordinatesDisplay = document.getElementById('coordinates');
+
+    function moveSquare() {
+        const input = document.getElementById('inputBox').value;
+        const square = document.getElementById('square');
+
+        switch (input) {
+            case 'W':
+                y -= step;
+                yCoordinate--;
+                break;
+            case 'L':
+                x -= step;
+                xCoordinate--;
+                break;
+            case 'R':
+                x += step;
+                xCoordinate++;
+                break;
+            default:
+                break;
+        }
+
+
+        function updateCoordinates() {
+            coordinatesDisplay.textContent = "ตำแหน่งปัจจุบัน ( " + xCoordinate + ", " + yCoordinate + " )";
+        }
+
+        submitButton.addEventListener('click', function () {
+            updateCoordinates();
+            inputBox.value = '';
+        });
+
+        updateCoordinates();
+
+        square.style.left = x + 'px';
+        square.style.top = y + 'px';
+
+        console.log('Square moved to:', x, ',', y);
+    }
+</script>
+
+</html>

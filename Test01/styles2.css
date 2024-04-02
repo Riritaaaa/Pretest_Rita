@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Prompt", sans-serif;
+}
+
+body{
+    background-color: #e5e5e5;
+}
+
+.container{
+    margin: auto;
+    padding: 15px 20px;
+    width: 390px;
+    height: 100%;
+    background: linear-gradient(
+        to top, 
+        #ffffff 0%, 
+        #ffffff 65%, 
+        #445667 65%, 
+        #163b60 100%
+      );
+}
+
+.rowcon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    padding: 10px 0px 0px 0px;
+}
+
+p{
+    text-align: center;
+    font-size: 22px;
+    color: white;
+}
+
+p.avail{
+    color: rgb(88, 197, 88);
+    font-size: 10px;
+}
+
+p.date{
+    color: rgb(187, 187, 187);
+    font-size: 10px;
+}
+
+.box{
+    width: 340px;
+    height: 80px;
+    padding: 15px;
+    border:none;
+    background-color: #3c5670;
+    border-radius: 5px;
+    align-items: center;
+    margin: 20px auto;
+    box-shadow: 2px 2px 2px #4d6074;
+}
+
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 0 20px 5px 20px;
+}
+
+.row p{
+    font-size: 16px;
+}
+
+.row2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 10px 20px ;
+    font-size: 10px;
+}
+
+.row2 p{
+    font-size: 10px;
+}
+
+.box1 .row1 p{
+    background-color: none;
+    border: 2px solid rgb(182, 181, 181);
+    color: rgb(64, 72, 84);
+    padding: 3px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 10px;
+    border-radius: 50px;
+}
+
+.box1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 340px;
+    height: 80px;
+    padding: 10px 35px;
+    border: 1px solid rgb(221, 221, 221);
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    margin: 0 auto 15px auto;
+    box-shadow: 1px 3px 4px #dedede ;
+}
+
+.box1 span{
+    font-size: 14px;
+}
+
+.rowcon p{
+    color: #163b60;
+    margin-left: 5px;
+}
+
+.boxlist,
+.boxlist1{
+    width: 340px;
+    height: 60px;
+    padding: 10px 35px;
+    border: 1px solid rgb(221, 221, 221);
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    margin: 15px auto;
+    box-shadow: 3px 3px 5px #dddddd ;
+}
+
+.boxlist .rowlist{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(64, 72, 84);
+    font-size: 13px;
+    padding: 0px 5px 0px 0px;
+}
+
+.boxlist1{
+    padding: 10px 15px;
+    display: flex;
+}
+
+.boxlist1 .rowlist{
+    margin-left: 20px;
+}
+
+h3{
+    padding-left: 5px;
+    font-size: 16px;
+    color: #163b60 ;
+}
+
+.boxlist1 .rowlist p{
+    font-size: 14px;
+    color: rgb(64, 72, 84);
+    font-weight: bold;
+}
+
+.boxlist1 .rowlist p.date{
+    font-size: 12px;
+    text-align: start;
+    font-weight: normal;
+    color: rgb(133, 133, 133);
+}
