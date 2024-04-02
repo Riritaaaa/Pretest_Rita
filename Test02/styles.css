@@ -8,7 +8,10 @@
 }
 
 .container {
-    margin: 25px 40px;
+    margin: 25px 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h2 {
@@ -44,9 +47,11 @@ button {
     justify-content: center;
     align-items: center;
     width: 225px;
-    margin-left: 50px;
+    background-color: rgb(255, 255, 255);
     height: 225px;
+    position: relative;
     border: 1px solid black;
+    
 }
 
 #square {
@@ -56,9 +61,15 @@ button {
     background-color: rgb(63, 152, 61);
     align-items: center;
     margin: auto;
+    border: 1px solid black;
 }
 
 #coordinates{
     margin-bottom: 20px;
-    margin-left: 50px;
+    
+}
+
+.row:first-of-type{
+    padding-right: 150px;
+    border-right: 1px solid rgb(200, 198, 198);
 }

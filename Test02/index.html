@@ -6,19 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Robot Walk</title>
+
+
 </head>
 
 <body>
     <div class="container">
-        <h2>Robot Walk</h2>
-        <p>คำสั่ง Robot Walk</p>
-        <input type="text" id="inputBox"><br>
-        <button id="submitButton" onclick="moveSquare()">คำนวณ</button>
-    </div>
-
-    <div id="coordinates"></div>
-    <div id="container2">
-        <div id="square"></div>
+        <div class="row">
+            <h2>Robot Walk</h2>
+            <p>คำสั่ง Robot Walk</p>
+            <input type="text" id="inputBox"><br>
+            <button id="submitButton" onclick="moveSquare()">คำนวณ</button>
+        </div>
+        <div class="row">
+            <div id="coordinates"></div>
+            <div id="container2">
+                <div id="square"></div>
+            </div>
+        </div>
     </div>
 </body>
 
@@ -30,29 +35,40 @@
     let yCoordinate = 0;
     const step = 25;
     const coordinatesDisplay = document.getElementById('coordinates');
+    let rotation = 0;
+
+    function rotateSquare(degrees) {
+        rotation += degrees;
+        square.style.transform = `rotate(${rotation}deg)`;
+    }
 
     function moveSquare() {
         const input = document.getElementById('inputBox').value;
         const square = document.getElementById('square');
 
-        switch (input) {
-            case 'W':
-                y -= step;
-                yCoordinate--;
-                break;
-            case 'L':
-                x -= step;
-                xCoordinate--;
-                break;
-            case 'R':
-                x += step;
-                xCoordinate++;
-                break;
-            default:
-                break;
+        for (let inputBox = 0; inputBox < input.length; inputBox++) {
+            const direction = input[inputBox];
+            if (direction === 'L') {
+                rotateSquare(-90);
+            } else if (direction === 'R') {
+                rotateSquare(90);
+            } else if (direction === 'W') {
+                if (rotation === 0) {
+                    y -= step;
+                    yCoordinate++;
+                } else if (rotation === 90) {
+                    x += step;
+                    xCoordinate++;
+                } else if (rotation === -90) {
+                    x -= step;
+                    xCoordinate--;
+                } else if (rotation === 180 || rotation === -180) {
+                    y += step;
+                    yCoordinate--;
+                }
+                square.style.backgroundColor = "red";
+            }
         }
-
-
         function updateCoordinates() {
             coordinatesDisplay.textContent = "ตำแหน่งปัจจุบัน ( " + xCoordinate + ", " + yCoordinate + " )";
         }
@@ -63,11 +79,10 @@
         });
 
         updateCoordinates();
-
         square.style.left = x + 'px';
         square.style.top = y + 'px';
 
-        console.log('Square moved to:', x, ',', y);
+        console.log("X:", x, "Y:", y);
     }
 </script>
 
